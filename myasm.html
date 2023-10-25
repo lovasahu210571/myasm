@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASM</title>
+    <style>
+
+/* Style for the navigation bar */
+nav {
+    background-color: #333; /* Background color of the navbar */
+    color: white; /* Text color in the navbar */
+    padding: 10px; /* Padding around the navbar */
+}
+
+/* Style for the navigation list */
+ul {
+    list-style-type: none; /* Remove the bullet points from the list */
+    padding: 0; /* Remove default padding */
+}
+
+/* Style for the navigation items (list items) */
+li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add spacing between list items */
+}
+
+/* Style for the navigation links */
+a {
+    text-decoration: none; /* Remove underlines from links */
+    color: white; /* Text color for links */
+}
+
+
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+ <div>
+<h4>Astaprahar Sankeertan Mandal</h4><img src="jaga.png" alt="jaga" style="width:50px;height:50px;"/>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#" id="about-link">About</a></li>
+            <li><a href="#" id="contact-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="content">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the home page content.</p>
+    </div>
+
+    <div id="about" class="content">
+        <h1>About Us</h1>
+        <p>Learn more about our company and mission.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>Feel free to get in touch with us.</p>
+    </div>
+
+    <script>
+        // Function to show the selected content and hide others
+        function showContent(id) {
+            const contentDivs = document.querySelectorAll('.content');
+            contentDivs.forEach((div) => {
+                if (div.id === id) {
+                    div.style.display = 'block';
+                } else {
+                    div.style.display = 'none';
+                }
+            });
+        }
+
+        // Add click event listeners to the links
+        document.getElementById('home-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('home');
+        });
+
+        document.getElementById('about-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('about');
+        });
+
+        document.getElementById('contact-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('contact');
+        });
+
+        // Show the initial content
+        showContent('home');
+    </script>
+</body>
+</html>
+
