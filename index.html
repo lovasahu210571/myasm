@@ -179,6 +179,7 @@ input[type=submit]:hover {
             <li><a href="#" id="about-link">About</a></li>
             <li><a href="#" id="contact-link">Contact</a></li>
 		<li><a href="#" id="calender-link">Odia Calender</a></li>
+		
         </ul>
     </nav>
 
@@ -297,21 +298,86 @@ input[type=submit]:hover {
     <div id="calender" class="content">
        
 <div class="row">
-  <div class="col-1 col-s-3 menu">
-     <p>Please select months</p>
-  <input type="radio" id="jan" name="fav_language" value="JAN">
-  <label for="jan">JAN</label><br>
-  <input type="radio" id="feb" name="fav_language" value="FEB">
-  <label for="feb">FEB</label><br>
-  <input type="radio" id="mar" name="fav_language" value="MAR">
-  <label for="mar">MAR</label><br>
+  <div class="col-2 col-s-3 menu">
+     <p>Please select months of Year 2024</p>
+  <nav>
+        <ul>
+            <li style="padding:5px;margin:5px;"><a href="#" id="jan-link">January</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="feb-link">February</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="mar-link">March</a></li><br><br>
+	
+ 	     <li style="padding:5px;margin:5px;"><a href="#" id="apr-link">April</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="may-link">May</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="jun-link">June</a></li><br><br>
+
+ 	<li style="padding:5px;margin:5px;"><a href="#" id="jul-link">July</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="aug-link">August</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="sep-link">September</a></li><br><br>
+	
+ 	     <li style="padding:5px;margin:5px;"><a href="#" id="oct-link">October</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="nov-link">November</a></li><br><br>
+            <li style="padding:5px;margin:5px;"><a href="#" id="dec-link">December</a></li>
+		
+		
+        </ul>
+    </nav>
 
   </div>
 
-  <div class="col-8 col-s-9">
+
+
+
+
+
+  <div class="col-7 col-s-12">
     
-    <p><img src="1.png" alt="Jan24" style="width:1000px;height:1000px;"/></p>
-  </div>
+      <div id="jan" class="content1">
+	<img src="1.png" alt="Jan24" style="width:800px;height:800px;"/>
+	</div>
+
+   <div id="feb" class="content1">
+<img src="2.png" alt="Feb24" style="width:800px;height:800px;"/>
+</div>
+   <div id="mar" class="content1">
+<img src="3.png" alt="Mar24" style="width:800px;height:800px;"/>
+</div>
+
+ <div id="apr" class="content1">
+	<img src="4.png" alt="Apr24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="may" class="content1">
+	<img src="5.png" alt="May24" style="width:800px;height:800px;"/>
+	</div>
+
+
+ <div id="jun" class="content1">
+	<img src="6.png" alt="Jun24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="jul" class="content1">
+	<img src="7.png" alt="Jul24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="aug" class="content1">
+	<img src="8.png" alt="Aug24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="sep" class="content1">
+	<img src="9.png" alt="Sep24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="oct" class="content1">
+	<img src="10.png" alt="Oct24" style="width:800px;height:800px;"/>
+	</div>
+
+ <div id="nov" class="content1">
+	<img src="11.png" alt="Nov24" style="width:800px;height:800px;"/>
+	</div>
+ <div id="dec" class="content1">
+	<img src="12.png" alt="Dec24" style="width:800px;height:800px;"/>
+	</div>
+
+
+
+  
+</div>
+
 
   <div class="col-3 col-s-12">
     <div class="aside">
@@ -331,6 +397,20 @@ input[type=submit]:hover {
     </div>
 
     <script>
+  // Function to show the selected content and hide others
+        function showContent1(id) {
+            const contentDivs1 = document.querySelectorAll('.content1');
+            contentDivs1.forEach((div) => {
+                if (div.id === id) {
+                    div.style.display = 'block';
+                } else {
+                    div.style.display = 'none';
+                }
+            });
+        }
+
+
+
         // Function to show the selected content and hide others
         function showContent(id) {
             const contentDivs = document.querySelectorAll('.content');
@@ -361,9 +441,89 @@ input[type=submit]:hover {
 
   document.getElementById('calender-link').addEventListener('click', function (e) {
             e.preventDefault();
-            showContent('calender');
+           showContent('calender');
+ 		  showContent1('jan'); 
+		
         });
 
+
+  // Add click event listeners to the links
+        document.getElementById('jan-link').addEventListener('click', function (e) {
+            e.preventDefault();
+         
+	   showContent('calender');
+ 		  showContent1('jan'); 
+   	
+        });
+
+        document.getElementById('feb-link').addEventListener('click', function (e) {
+            e.preventDefault();
+          showContent('calender');
+ 		  showContent1('feb'); 
+        });
+
+        document.getElementById('mar-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('mar'); 
+        });
+
+   document.getElementById('apr-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('apr'); 
+        });
+
+
+   document.getElementById('may-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('may'); 
+        });
+
+   document.getElementById('jun-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('jun'); 
+        });
+
+   document.getElementById('jul-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('jul'); 
+        });
+
+   document.getElementById('aug-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('aug'); 
+        });
+
+
+   document.getElementById('sep-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('sep'); 
+        });
+
+   document.getElementById('oct-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('oct'); 
+        });
+
+
+   document.getElementById('nov-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('nov'); 
+        });
+
+   document.getElementById('dec-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            showContent('calender');
+ 		  showContent1('dec'); 
+        });
         // Show the initial content
         showContent('home');
     </script>
